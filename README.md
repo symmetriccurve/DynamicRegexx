@@ -1,4 +1,4 @@
-#A Simple utility tool to take senstense and match all words passed and return filtered senstences
+# A Simple utility tool to take senstense and match all words passed and return filtered senstences
 ```sh
 const sentences = [
   "test1",
