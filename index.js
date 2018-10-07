@@ -1,11 +1,4 @@
-const sentences = [
-  "test1",
-  "test1 test2",
-  "test1 test2 test3",
-  "test1 test2 test3 test4",
-]
-
-export default findAllMatches(sentences, inputSearchSting) {
+export default findAllMatches(sentences, inputSearchSting,key) {
   var searchString = inputSearchSting.split(' ')// ["test1","test2", . . .]
   
   var regExString = '^'
@@ -19,20 +12,8 @@ export default findAllMatches(sentences, inputSearchSting) {
 
   var matches = sentences.filter(eachSentence => {
     //console.log(eachSentence.match(regEx))
+    if(key) return eachSentence[key].match(regEx) != null
     return eachSentence.match(regEx) != null
   })
   return matches
 }
-
-//Test Cases
-
-console.log(findAllMatches(sentences, "test1"))
-//["test1", "test1 test2", "test1 test2 test3", "test1 test2 test3 test4"]
-console.log(findAllMatches(sentences, "test1 test2"))
-// ["test1 test2", "test1 test2 test3", "test1 test2 test3 test4"]
-
-// Given in any order
-console.log(findAllMatches(sentences, "test1 test4"))
-//["test1 test2 test3 test4"]
-console.log(findAllMatches(sentences, "test4 test1"))
-//["test1 test2 test3 test4"]
