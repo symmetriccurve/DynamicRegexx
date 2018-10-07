@@ -12,8 +12,8 @@ export default findAllMatches(sentences, inputSearchSting,key) {
 
   var matches = sentences.filter(eachSentence => {
     //console.log(eachSentence.match(regEx))
-    if(key) return eachSentence[key].match(regEx) != null
-    return eachSentence.match(regEx) != null
+    if(key) return eachSentence[key].toLowerCase().match(regEx) != null
+    return eachSentence.toLowerCase()..match(regEx) != null
   })
   return matches
 }
